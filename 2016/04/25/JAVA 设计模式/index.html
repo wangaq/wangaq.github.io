@@ -13,23 +13,22 @@
     
     <meta name="description" content="观察者模式 Observer 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。
  这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。
-观察者模式的组成 抽象主题角色：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。
- 抽象观察者">
+观察者模式的组成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA 设计模式">
 <meta property="og:url" content="http://yoursite.com/2016/04/25/JAVA 设计模式/index.html">
 <meta property="og:site_name" content="W.A.Q">
 <meta property="og:description" content="观察者模式 Observer 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。
  这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。
-观察者模式的组成 抽象主题角色：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。
- 抽象观察者">
-<meta property="og:updated_time" content="2016-04-25T08:00:49.147Z">
+观察者模式的组成">
+<meta property="og:updated_time" content="2016-04-25T08:20:59.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA 设计模式">
 <meta name="twitter:description" content="观察者模式 Observer 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。
  这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。
-观察者模式的组成 抽象主题角色：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。
- 抽象观察者">
+观察者模式的组成">
+<meta name="twitter:creator" content="@true">
+<link rel="publisher" href="true">
 
     
     <link rel="alternative" href="/atom.xml" title="W.A.Q" type="application/atom+xml">
@@ -93,7 +92,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Wang A.Q" target="_blank" itemprop="author">Wang A.Q</a>
+		<a href="https://plus.google.com/true?rel=author" title="Wang A.Q" target="_blank" itemprop="author">Wang A.Q</a>
 		
   <p class="article-time">
     <time datetime="2016-04-25T05:30:06.857Z" itemprop="datePublished"> 发表于 2016-04-25</time>
@@ -111,10 +110,11 @@
 		
 		<h3 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h3><p> 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。</p>
 <p> 这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。</p>
-<h3 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h3><p> <strong>抽象主题角色</strong>：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。</p>
+<h3 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h3><a id="more"></a>
+<p> <strong>抽象主题角色</strong>：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。</p>
 <p> <strong>抽象观察者角色</strong>：为所有具体的观察者定义一个接口，在得到主题的通知时更新自己。</p>
 <p> <strong>具体主题角色</strong>：在具体主题内部状态改变时，给所有登记过的观察者发出通知。具体主题角色通常用一个子类实现。</p>
-<p> <strong>具体观察者角色</strong>：该角色实现抽象观察者角色所要求的更新接口，以便使本身的状态与主题的状态相协调。通常用一个子类实现。如果需要，具体观察者角色可以保存一个指向具体主题角色的引用。<br><a id="more"></a></p>
+<p> <strong>具体观察者角色</strong>：该角色实现抽象观察者角色所要求的更新接口，以便使本身的状态与主题的状态相协调。通常用一个子类实现。如果需要，具体观察者角色可以保存一个指向具体主题角色的引用。</p>
 <h3 id="程序实例"><a href="#程序实例" class="headerlink" title="程序实例"></a>程序实例</h3><p> 通过程序实例来说明观察者模式：</p>
 <p>首先定义抽象的观察者：</p>
 <pre><code>//抽象观察者角色public interface Watcher
@@ -193,7 +193,7 @@ public class ConcreteWatched implements Watched
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/25/JAVA 设计模式/" data-title="JAVA 设计模式 | W.A.Q" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/25/JAVA 设计模式/" data-title="JAVA 设计模式 | W.A.Q" data-tsina="true" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -314,16 +314,28 @@ public class ConcreteWatched implements Watched
 	 
 	<div class="social-font" class="clearfix">
 		
+		<a href="http://weibo.com/true" target="_blank" class="icon-weibo" title="微博"></a>
+		
 		
 		<a href="https://github.com/wangaq" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
+		<a href="https://twitter.com/true" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/true" target="_blank" class="icon-facebook" title="facebook"></a>
 		
 		
 		
 		
+		<a href="http://www.zhihu.com/people/true" target="_blank" class="icon-zhihu" title="知乎"></a>
 		
+		
+		<a href="https://plus.google.com/true?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:true" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
