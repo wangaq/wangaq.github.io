@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>W.A.Q</title>
+  <subtitle>生活不止眼前的苟且 还有诗和远方</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-04-25T08:00:49.147Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Wang A.Q</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA 设计模式</title>
+    <link href="http://yoursite.com/2016/04/25/JAVA%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://yoursite.com/2016/04/25/JAVA 设计模式/</id>
+    <published>2016-04-25T05:30:06.857Z</published>
+    <updated>2016-04-25T08:00:49.147Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;观察者模式-Observer&quot;&gt;&lt;a href=&quot;#观察者模式-Observer&quot; class=&quot;headerlink&quot; title=&quot;观察者模式 Observer&quot;&gt;&lt;/a&gt;观察者模式 Observer&lt;/h3&gt;&lt;p&gt; 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。&lt;/p&gt;
+&lt;p&gt; 这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。&lt;/p&gt;
+&lt;h3 id=&quot;观察者模式的组成&quot;&gt;&lt;a href=&quot;#观察者模式的组成&quot; class=&quot;headerlink&quot; title=&quot;观察者模式的组成&quot;&gt;&lt;/a&gt;观察者模式的组成&lt;/h3&gt;&lt;p&gt; &lt;strong&gt;抽象主题角色&lt;/strong&gt;：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;抽象观察者角色&lt;/strong&gt;：为所有具体的观察者定义一个接口，在得到主题的通知时更新自己。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;具体主题角色&lt;/strong&gt;：在具体主题内部状态改变时，给所有登记过的观察者发出通知。具体主题角色通常用一个子类实现。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;具体观察者角色&lt;/strong&gt;：该角色实现抽象观察者角色所要求的更新接口，以便使本身的状态与主题的状态相协调。通常用一个子类实现。如果需要，具体观察者角色可以保存一个指向具体主题角色的引用。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;程序实例&quot;&gt;&lt;a href=&quot;#程序实例&quot; class=&quot;headerlink&quot; title=&quot;程序实例&quot;&gt;&lt;/a&gt;程序实例&lt;/h3&gt;&lt;p&gt; 通过程序实例来说明观察者模式：&lt;/p&gt;
+&lt;p&gt;首先定义抽象的观察者：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//抽象观察者角色public interface Watcher
+{
+    public void update(String str);
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 然后定义抽象的主题角色，即抽象的被观察者，在其中声明方法（添加、移除观察者，通知观察者）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//抽象主题角色，watched：被观察public interface Watched
+{
+    public void addWatcher(Watcher watcher);
+
+    public void removeWatcher(Watcher watcher);
+
+    public void notifyWatchers(String str);
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 然后定义具体的观察者：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class ConcreteWatcher implements Watcher
+{
+
+    @Override
+    public void update(String str)
+    {
+        System.out.println(str);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 之后是具体的主题角色：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
+import java.util.List;
+
+public class ConcreteWatched implements Watched
+{
+    // 存放观察者
+    private List&amp;lt;Watcher&amp;gt; list = new ArrayList&amp;lt;Watcher&amp;gt;();
+
+    @Override
+    public void addWatcher(Watcher watcher)
+    {
+        list.add(watcher);
+    }
+
+    @Override
+    public void removeWatcher(Watcher watcher)
+    {
+        list.remove(watcher);
+    }
+
+    @Override
+    public void notifyWatchers(String str)
+    {
+        // 自动调用实际上是主题进行调用的
+        for (Watcher watcher : list)
+        {
+            watcher.update(str);
+        }
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 编写测试类：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; public  class Test  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  public  static  void main(String[] args)  &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Watched girl = new ConcreteWatched();  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Watcher watcher1 = new ConcreteWatcher();  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Watcher watcher2 = new ConcreteWatcher();  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Watcher watcher3 = new ConcreteWatcher();  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    girl.addWatcher(watcher1);  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    girl.addWatcher(watcher2);  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    girl.addWatcher(watcher3);  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    girl.notifyWatchers( &amp;quot;开心&amp;quot; );  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;观察者模式-Observer&quot;&gt;&lt;a href=&quot;#观察者模式-Observer&quot; class=&quot;headerlink&quot; title=&quot;观察者模式 Observer&quot;&gt;&lt;/a&gt;观察者模式 Observer&lt;/h3&gt;&lt;p&gt; 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。&lt;/p&gt;
+&lt;p&gt; 这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。&lt;/p&gt;
+&lt;h3 id=&quot;观察者模式的组成&quot;&gt;&lt;a href=&quot;#观察者模式的组成&quot; class=&quot;headerlink&quot; title=&quot;观察者模式的组成&quot;&gt;&lt;/a&gt;观察者模式的组成&lt;/h3&gt;&lt;p&gt; &lt;strong&gt;抽象主题角色&lt;/strong&gt;：把所有对观察者对象的引用保存在一个集合中，每个抽象主题角色都可以有任意数量的观察者。抽象主题提供一个接口，可以增加和删除观察者角色。一般用一个抽象类和接口来实现。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;抽象观察者角色&lt;/strong&gt;：为所有具体的观察者定义一个接口，在得到主题的通知时更新自己。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;具体主题角色&lt;/strong&gt;：在具体主题内部状态改变时，给所有登记过的观察者发出通知。具体主题角色通常用一个子类实现。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;具体观察者角色&lt;/strong&gt;：该角色实现抽象观察者角色所要求的更新接口，以便使本身的状态与主题的状态相协调。通常用一个子类实现。如果需要，具体观察者角色可以保存一个指向具体主题角色的引用。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo学习</title>
+    <link href="http://yoursite.com/2016/04/23/Hexo%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2016/04/23/Hexo学习/</id>
+    <published>2016-04-23T08:29:13.925Z</published>
+    <updated>2016-04-25T05:39:39.303Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;构造流程……&quot;&gt;&lt;a href=&quot;#构造流程……&quot; class=&quot;headerlink&quot; title=&quot;构造流程……&quot;&gt;&lt;/a&gt;构造流程……&lt;/h3&gt;&lt;p&gt;1.&lt;strong&gt;新建文件夹，Git Shell 进入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;strong&gt;创建&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3.&lt;strong&gt;部署&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo init、npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4.&lt;strong&gt;将其 deploy 到仓库中&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo clean、hexo generate、hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;构造流程……&quot;&gt;&lt;a href=&quot;#构造流程……&quot; class=&quot;headerlink&quot; title=&quot;构造流程……&quot;&gt;&lt;/a&gt;构造流程……&lt;/h3&gt;&lt;p&gt;1.&lt;strong&gt;新建文件夹，Git Shell 进入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;strong
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/04/23/hello-world/"/>
+    <id>http://yoursite.com/2016/04/23/hello-world/</id>
+    <published>2016-04-23T03:53:02.188Z</published>
+    <updated>2016-04-23T03:53:02.188Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
