@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>W.A.Q</title>
+    <title>Async  异步流程控制 | W.A.Q</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Wang A.Q">
     
 
     
-    <meta name="description" content="This is a Personal Blog for W.A.Q">
-<meta property="og:type" content="website">
-<meta property="og:title" content="W.A.Q">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="流程控制123451.集合: Collections2.流程控制: Control Flow3.工具类: Utils
+集合: Collections1234567891011121314151617181920   * each: 如果想对同一个集合中的所有元素都执行同一个异步操作。   * * map: 对集合中的每一个元素，执行某个异步操作，得到结果。所有的结果将汇总到最终的callback里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Async  异步流程控制">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/Async  异步流程控制/index.html">
 <meta property="og:site_name" content="W.A.Q">
-<meta property="og:description" content="This is a Personal Blog for W.A.Q">
+<meta property="og:description" content="流程控制123451.集合: Collections2.流程控制: Control Flow3.工具类: Utils
+集合: Collections1234567891011121314151617181920   * each: 如果想对同一个集合中的所有元素都执行同一个异步操作。   * * map: 对集合中的每一个元素，执行某个异步操作，得到结果。所有的结果将汇总到最终的callback里">
+<meta property="og:updated_time" content="2016-05-12T05:04:37.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W.A.Q">
-<meta name="twitter:description" content="This is a Personal Blog for W.A.Q">
+<meta name="twitter:title" content="Async  异步流程控制">
+<meta name="twitter:description" content="流程控制123451.集合: Collections2.流程控制: Control Flow3.工具类: Utils
+集合: Collections1234567891011121314151617181920   * each: 如果想对同一个集合中的所有元素都执行同一个异步操作。   * * map: 对集合中的每一个元素，执行某个异步操作，得到结果。所有的结果将汇总到最终的callback里">
 <meta name="twitter:creator" content="@true">
 <link rel="publisher" href="true">
 
@@ -75,12 +79,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2016/05/12/Async  异步流程控制/" title="Async  异步流程控制" itemprop="url">Async  异步流程控制</a>
@@ -94,21 +96,23 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.集合: Collections</span><br><span class="line"></span><br><span class="line">2.流程控制: Control Flow</span><br><span class="line"></span><br><span class="line">3.工具类: Utils</span><br></pre></td></tr></table></figure>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#流程控制"><span class="toc-number">1.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#集合-Collections"><span class="toc-number">1.1.</span> <span class="toc-text">集合: Collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制-Control-Flow"><span class="toc-number">1.2.</span> <span class="toc-text">流程控制: Control Flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具类-Utils"><span class="toc-number">1.3.</span> <span class="toc-text">工具类: Utils</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEMO"><span class="toc-number">1.4.</span> <span class="toc-text">DEMO</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.集合: Collections</span><br><span class="line"></span><br><span class="line">2.流程控制: Control Flow</span><br><span class="line"></span><br><span class="line">3.工具类: Utils</span><br></pre></td></tr></table></figure>
 <h2 id="集合-Collections"><a href="#集合-Collections" class="headerlink" title="集合: Collections"></a>集合: Collections</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">   * each: 如果想对同一个集合中的所有元素都执行同一个异步操作。</span><br><span class="line">   * </span><br><span class="line">* map: 对集合中的每一个元素，执行某个异步操作，得到结果。所有的结果将汇总到最终的callback里。与each的区别是，each只关心操作不管最后的值，而map关心的最后产生的值。</span><br><span class="line">* </span><br><span class="line">* filter: 使用异步操作对集合中的元素进行筛选, 需要注意的是，iterator的callback只有一个参数，只能接收true或false。</span><br><span class="line">* </span><br><span class="line">* reject: reject跟filter正好相反，当测试为true时则抛弃</span><br><span class="line">* </span><br><span class="line">* reduce: 可以让我们给定一个初始值，用它与集合中的每一个元素做运算，最后得到一个值。reduce从左向右来遍历元素，如果想从右向左，可使用reduceRight。</span><br><span class="line">* </span><br><span class="line">* detect: 用于取得集合中满足条件的第一个元素。</span><br><span class="line">* </span><br><span class="line">* sortBy: 对集合内的元素进行排序，依据每个元素进行某异步操作后产生的值，从小到大排序。</span><br><span class="line">* </span><br><span class="line">* some: 当集合中是否有至少一个元素满足条件时，最终callback得到的值为true，否则为false.</span><br><span class="line">* </span><br><span class="line">* every: 如果集合里每一个元素都满足条件，则传给最终回调的result为true，否则为false</span><br><span class="line">* </span><br><span class="line">* concat: 将多个异步操作的结果合并为一个数组。</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
 <h2 id="流程控制-Control-Flow"><a href="#流程控制-Control-Flow" class="headerlink" title="流程控制: Control Flow"></a>流程控制: Control Flow</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* series: 串行执行，一个函数数组中的每个函数，每一个函数执行完成之后才能执行下一个函数。</span><br><span class="line">* </span><br><span class="line">* parallel: 并行执行多个函数，每个函数都是立即执行，不需要等待其它函数先执行。传给最终callback的数组中的数据按照tasks中声明的顺序，而不是执行完成的顺序。</span><br><span class="line">* </span><br><span class="line">* whilst: 相当于while，但其中的异步调用将在完成后才会进行下一次循环。</span><br><span class="line">* </span><br><span class="line">* doWhilst: 相当于do…while, doWhilst交换了fn,test的参数位置，先执行一次循环，再做test判断。</span><br><span class="line">* </span><br><span class="line">* until: until与whilst正好相反，当test为false时循环，与true时跳出。其它特性一致。</span><br><span class="line">* </span><br><span class="line">* doUntil: doUntil与doWhilst正好相反，当test为false时循环，与true时跳出。其它特性一致。</span><br><span class="line">* </span><br><span class="line">* forever: 无论条件循环执行，如果不出错，callback永远不被执行。</span><br><span class="line">* </span><br><span class="line">* waterfall: 按顺序依次执行一组函数。每个函数产生的值，都将传给下一个。</span><br><span class="line">* </span><br><span class="line">* compose: 创建一个包括一组异步函数的函数集合，每个函数会消费上一次函数的返回值。把f(),g(),h()异步函数，组合成f(g(h()))的形式，通过callback得到返回值。</span><br><span class="line">* </span><br><span class="line">* applyEach: 实现给一数组中每个函数传相同参数，通过callback返回。如果只传第一个参数，将返回一个函数对象，我可以传参调用。</span><br><span class="line">* </span><br><span class="line">* queue: 是一个串行的消息队列，通过限制了worker数量，不再一次性全部执行。当worker数量不够用时，新加入的任务将会排队等候，直到有新的worker可用。</span><br><span class="line">* </span><br><span class="line">* cargo: 一个串行的消息队列，类似于queue，通过限制了worker数量，不再一次性全部执行。不同之处在于，cargo每次会加载满额的任务做为任务单元，只有任务单元中全部执行完成后，才会加载新的任务单元。</span><br><span class="line">* </span><br><span class="line">* auto: 用来处理有依赖关系的多个任务的执行。</span><br><span class="line">* </span><br><span class="line">* iterator: 将一组函数包装成为一个iterator，初次调用此iterator时，会执行定义中的第一个函数并返回第二个函数以供调用。</span><br><span class="line">* </span><br><span class="line">* apply: 可以让我们给一个函数预绑定多个参数并生成一个可直接调用的新函数，简化代码。</span><br><span class="line">* </span><br><span class="line">* nextTick: 与nodejs的nextTick一样，再最后调用函数。</span><br><span class="line">* </span><br><span class="line">* times: 异步运行,times可以指定调用几次，并把结果合并到数组中返回</span><br><span class="line">* </span><br><span class="line">* timesSeries: 与time类似，唯一不同的是同步执行</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
 <h2 id="工具类-Utils"><a href="#工具类-Utils" class="headerlink" title="工具类: Utils"></a>工具类: Utils</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* memoize: 让某一个函数在内存中缓存它的计算结果。对于相同的参数，只计算一次，下次就直接拿到之前算好的结果。</span><br><span class="line">* </span><br><span class="line">* unmemoize: 让已经被缓存的函数，返回不缓存的函数引用。</span><br><span class="line">* </span><br><span class="line">* log: 执行某异步函数，并记录它的返回值，日志输出。</span><br><span class="line">* </span><br><span class="line">* dir: 与log类似，不同之处在于，会调用浏览器的console.dir()函数，显示为DOM视图。</span><br><span class="line">* </span><br><span class="line">* noConflict: 如果之前已经在全局域中定义了async变量，当导入本async.js时，会先把之前的async变量保存起来，然后覆盖它。仅仅用于浏览器端，在nodejs中没用</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
 <h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/bsspirit/async_demo</span><br></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -121,139 +125,43 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2016/05/12/Async  异步流程控制/" data-title="Async  异步流程控制 | W.A.Q" data-tsina="true" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/25/JAVA 设计模式/" title="JAVA 设计模式" itemprop="url">JAVA 设计模式</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/true?rel=author" title="Wang A.Q" target="_blank" itemprop="author">Wang A.Q</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-25T05:30:06.857Z" itemprop="datePublished"> 发表于 2016-04-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h3><p> 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。</p>
-<p> 这个主题对象在状态上发生变化时，会通知所有观察者对象，让它们能够自动更新自己。</p>
-<h3 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h3>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/04/25/JAVA 设计模式/#more">阅读全文.....</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/java/">java</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/25/JAVA 设计模式/"  title="JAVA 设计模式">
+ <strong>下一篇：</strong><br/> 
+ <span>JAVA 设计模式
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/23/Hexo学习/" title="Hexo学习" itemprop="url">Hexo学习</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/true?rel=author" title="Wang A.Q" target="_blank" itemprop="author">Wang A.Q</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-23T08:29:13.925Z" itemprop="datePublished"> 发表于 2016-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="构造流程……"><a href="#构造流程……" class="headerlink" title="构造流程……"></a>构造流程……</h3><p>1.<strong>新建文件夹，Git Shell 进入</strong></p>
-<p>2.<strong>创建</strong>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/04/23/Hexo学习/#more">阅读全文.....</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/hexo/">hexo</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
 	
-</div>
 
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#流程控制"><span class="toc-number">1.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#集合-Collections"><span class="toc-number">1.1.</span> <span class="toc-text">集合: Collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制-Control-Flow"><span class="toc-number">1.2.</span> <span class="toc-text">流程控制: Control Flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具类-Utils"><span class="toc-number">1.3.</span> <span class="toc-text">工具类: Utils</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEMO"><span class="toc-number">1.4.</span> <span class="toc-text">DEMO</span></a></li></ol></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -424,12 +332,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -500,4 +485,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
